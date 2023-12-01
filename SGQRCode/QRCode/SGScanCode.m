@@ -199,43 +199,43 @@
 - (NSArray *)metadataObjectTypes {
     if (!_metadataObjectTypes) {
         NSMutableArray *available = [NSMutableArray array];
-        if ([_metadataOutput.availableMetadataObjectTypes containsObject:AVMetadataObjectTypeUPCECode]) {
+        if ([self.metadataOutput.availableMetadataObjectTypes containsObject:AVMetadataObjectTypeUPCECode]) {
             [available addObject:AVMetadataObjectTypeUPCECode];
         }
-        if ([_metadataOutput.availableMetadataObjectTypes containsObject:AVMetadataObjectTypeCode39Code]) {
+        if ([self.metadataOutput.availableMetadataObjectTypes containsObject:AVMetadataObjectTypeCode39Code]) {
             [available addObject:AVMetadataObjectTypeCode39Code];
         }
-        if ([_metadataOutput.availableMetadataObjectTypes containsObject:AVMetadataObjectTypeCode39Mod43Code]) {
+        if ([self.metadataOutput.availableMetadataObjectTypes containsObject:AVMetadataObjectTypeCode39Mod43Code]) {
             [available addObject:AVMetadataObjectTypeCode39Mod43Code];
         }
-        if ([_metadataOutput.availableMetadataObjectTypes containsObject:AVMetadataObjectTypeEAN13Code]) {
+        if ([self.metadataOutput.availableMetadataObjectTypes containsObject:AVMetadataObjectTypeEAN13Code]) {
             [available addObject:AVMetadataObjectTypeEAN13Code];
         }
-        if ([_metadataOutput.availableMetadataObjectTypes containsObject:AVMetadataObjectTypeEAN8Code]) {
+        if ([self.metadataOutput.availableMetadataObjectTypes containsObject:AVMetadataObjectTypeEAN8Code]) {
             [available addObject:AVMetadataObjectTypeEAN8Code];
         }
-        if ([_metadataOutput.availableMetadataObjectTypes containsObject:AVMetadataObjectTypeCode93Code]) {
+        if ([self.metadataOutput.availableMetadataObjectTypes containsObject:AVMetadataObjectTypeCode93Code]) {
             [available addObject:AVMetadataObjectTypeCode93Code];
         }
-        if ([_metadataOutput.availableMetadataObjectTypes containsObject:AVMetadataObjectTypeCode128Code]) {
+        if ([self.metadataOutput.availableMetadataObjectTypes containsObject:AVMetadataObjectTypeCode128Code]) {
             [available addObject:AVMetadataObjectTypeCode128Code];
         }
-        if ([_metadataOutput.availableMetadataObjectTypes containsObject:AVMetadataObjectTypePDF417Code]) {
+        if ([self.metadataOutput.availableMetadataObjectTypes containsObject:AVMetadataObjectTypePDF417Code]) {
             [available addObject:AVMetadataObjectTypePDF417Code];
         }
-        if ([_metadataOutput.availableMetadataObjectTypes containsObject:AVMetadataObjectTypeQRCode]) {
+        if ([self.metadataOutput.availableMetadataObjectTypes containsObject:AVMetadataObjectTypeQRCode]) {
             [available addObject:AVMetadataObjectTypeQRCode];
         }
-        if ([_metadataOutput.availableMetadataObjectTypes containsObject:AVMetadataObjectTypeAztecCode]) {
+        if ([self.metadataOutput.availableMetadataObjectTypes containsObject:AVMetadataObjectTypeAztecCode]) {
             [available addObject:AVMetadataObjectTypeAztecCode];
         }
-        if ([_metadataOutput.availableMetadataObjectTypes containsObject:AVMetadataObjectTypeInterleaved2of5Code]) {
+        if ([self.metadataOutput.availableMetadataObjectTypes containsObject:AVMetadataObjectTypeInterleaved2of5Code]) {
             [available addObject:AVMetadataObjectTypeInterleaved2of5Code];
         }
-        if ([_metadataOutput.availableMetadataObjectTypes containsObject:AVMetadataObjectTypeITF14Code]) {
+        if ([self.metadataOutput.availableMetadataObjectTypes containsObject:AVMetadataObjectTypeITF14Code]) {
             [available addObject:AVMetadataObjectTypeITF14Code];
         }
-        if ([_metadataOutput.availableMetadataObjectTypes containsObject:AVMetadataObjectTypeDataMatrixCode]) {
+        if ([self.metadataOutput.availableMetadataObjectTypes containsObject:AVMetadataObjectTypeDataMatrixCode]) {
             [available addObject:AVMetadataObjectTypeDataMatrixCode];
         }
         _metadataObjectTypes = [NSArray arrayWithArray:available];
