@@ -64,7 +64,7 @@
     if ([_session canAddOutput:self.metadataOutput]) {
         [_session addOutput:self.metadataOutput];
     }
-    
+    NSLog(@"%@",_metadataOutput.availableMetadataObjectTypes);
     /// 元数据输出对象的二维码识数据别类型
     _metadataOutput.metadataObjectTypes = self.metadataObjectTypes;
 }
@@ -198,21 +198,47 @@
 
 - (NSArray *)metadataObjectTypes {
     if (!_metadataObjectTypes) {
-        _metadataObjectTypes = @[
-            AVMetadataObjectTypeUPCECode,
-            AVMetadataObjectTypeCode39Code,
-            AVMetadataObjectTypeCode39Mod43Code,
-            AVMetadataObjectTypeEAN13Code,
-            AVMetadataObjectTypeEAN8Code,
-            AVMetadataObjectTypeCode93Code,
-            AVMetadataObjectTypeCode128Code,
-            AVMetadataObjectTypePDF417Code,
-            AVMetadataObjectTypeQRCode,
-            AVMetadataObjectTypeAztecCode,
-            AVMetadataObjectTypeInterleaved2of5Code,
-            AVMetadataObjectTypeITF14Code,
-            AVMetadataObjectTypeDataMatrixCode,
-        ];
+        NSMutableArray *available = [NSMutableArray array];
+        if ([_metadataOutput.availableMetadataObjectTypes containsObject:AVMetadataObjectTypeUPCECode]) {
+            [available addObject:AVMetadataObjectTypeUPCECode];
+        }
+        if ([_metadataOutput.availableMetadataObjectTypes containsObject:AVMetadataObjectTypeCode39Code]) {
+            [available addObject:AVMetadataObjectTypeCode39Code];
+        }
+        if ([_metadataOutput.availableMetadataObjectTypes containsObject:AVMetadataObjectTypeCode39Mod43Code]) {
+            [available addObject:AVMetadataObjectTypeCode39Mod43Code];
+        }
+        if ([_metadataOutput.availableMetadataObjectTypes containsObject:AVMetadataObjectTypeEAN13Code]) {
+            [available addObject:AVMetadataObjectTypeEAN13Code];
+        }
+        if ([_metadataOutput.availableMetadataObjectTypes containsObject:AVMetadataObjectTypeEAN8Code]) {
+            [available addObject:AVMetadataObjectTypeEAN8Code];
+        }
+        if ([_metadataOutput.availableMetadataObjectTypes containsObject:AVMetadataObjectTypeCode93Code]) {
+            [available addObject:AVMetadataObjectTypeCode93Code];
+        }
+        if ([_metadataOutput.availableMetadataObjectTypes containsObject:AVMetadataObjectTypeCode128Code]) {
+            [available addObject:AVMetadataObjectTypeCode128Code];
+        }
+        if ([_metadataOutput.availableMetadataObjectTypes containsObject:AVMetadataObjectTypePDF417Code]) {
+            [available addObject:AVMetadataObjectTypePDF417Code];
+        }
+        if ([_metadataOutput.availableMetadataObjectTypes containsObject:AVMetadataObjectTypeQRCode]) {
+            [available addObject:AVMetadataObjectTypeQRCode];
+        }
+        if ([_metadataOutput.availableMetadataObjectTypes containsObject:AVMetadataObjectTypeAztecCode]) {
+            [available addObject:AVMetadataObjectTypeAztecCode];
+        }
+        if ([_metadataOutput.availableMetadataObjectTypes containsObject:AVMetadataObjectTypeInterleaved2of5Code]) {
+            [available addObject:AVMetadataObjectTypeInterleaved2of5Code];
+        }
+        if ([_metadataOutput.availableMetadataObjectTypes containsObject:AVMetadataObjectTypeITF14Code]) {
+            [available addObject:AVMetadataObjectTypeITF14Code];
+        }
+        if ([_metadataOutput.availableMetadataObjectTypes containsObject:AVMetadataObjectTypeDataMatrixCode]) {
+            [available addObject:AVMetadataObjectTypeDataMatrixCode];
+        }
+        _metadataObjectTypes = [NSArray arrayWithArray:available];
     }
     return _metadataObjectTypes;
 }
